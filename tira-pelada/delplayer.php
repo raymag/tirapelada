@@ -27,5 +27,5 @@ if(isset($_SESSION["players"])){
         }
     }
 }
-header("location:homepage.php");
+header("location:index.php");
 ?>

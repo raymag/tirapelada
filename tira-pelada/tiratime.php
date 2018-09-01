@@ -28,7 +28,7 @@ for($i=0;$i < $numTeams;$i++){
 }
 if($numTeams<2){
     echo "<script>alert('São necessários pelo menos 10 jogadores')</script>";
-    // header("location:homepage.php");
+    // header("location:index.php");
 }else{
 while(--$numGolkeeper>=0){
         foreach($players as $player){
@@ -139,7 +139,7 @@ echo "<hr>";
 // var_dump($players);
 }
 ?>
-<a href="homepage.php">Voltar</a>
+<a href="index.php">Voltar</a>
 </div> 
 </body>
 </html>

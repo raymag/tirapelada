@@ -7,5 +7,5 @@ unset($_SESSION["undefined"]);
 unset($_SESSION["bronze"]);
 unset($_SESSION["silver"]);
 unset($_SESSION["gold"]);
-header("location:homepage.php")
+header("location:index.php")
 ?>
