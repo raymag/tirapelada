@@ -37,13 +37,13 @@ while(--$numGolkeeper>=0){
                 $teams[0][] = $player;
                 switch($player["playerCategory"]){
                     case "bronze":
-                        $teams[0][0] +1;
+                        $teams[0][0]+=1;
                         break;
                     case "prata":
-                        $teams[0][0] +2;
+                        $teams[0][0]+=2;
                         break;
                     case "ouro":
-                        $teams[0][0] +3;
+                        $teams[0][0]+=3;
                         break;
                 }
                 unset($players[array_search($player, $players)]);
@@ -119,6 +119,18 @@ foreach($teams as $team){
         // echo "<br/>";
     }
     echo "<br>";
+}
+echo "<hr>";
+echo "<p>Jogadores de Reserva</p>";
+foreach($players as $player){
+    echo "<div class='player-block'>";
+    echo "Nome: ".$player["playerName"];
+    echo "<br>";
+    echo "Categoria: ".$player["playerCategory"];
+    echo "<br>";
+    echo "Posição: ".$player["playerPosition"];
+    echo "<br>";
+    echo "</div>";
 }
 echo "<hr>";
 // foreach($players as $player){
