@@ -41,15 +41,15 @@
 								$_SESSION["bronze"]++;
 								break;
 							case "2":
-								$players[$i]["playerCategory"] = "prata";
-								$_SESSION["prata"]++;
+								$players[$i]["playerCategory"] = "silver";
+								$_SESSION["silver"]++;
 								break;
 							case "3":
-								$players[$i]["playerCategory"] = "ouro";
-								$_SESSION["ouro"]++;
+								$players[$i]["playerCategory"] = "gold";
+								$_SESSION["gold"]++;
 								break;
 							default:
-								$_SESSION["indefinido"]++;
+								$_SESSION["undefined"]++;
 								break;
 						}
 					}
@@ -77,10 +77,10 @@
 							case "bronze":
 								echo "<input type='range' min='0' max='3' value='1' name='".$i."c' step='1'>";
 								break;
-							case "prata":
+							case "silver":
 								echo "<input type='range' min='0' max='3' value='2' name='".$i."c' step='1'>";
 								break;
-							case "ouro":
+							case "gold":
 								echo "<input type='range' min='0' max='3' value='3' name='".$i."c' step='1'>";
 								break;	
 							default:
@@ -107,3 +107,4 @@
 </html>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.min.js" ></script>
+<script type="text/javascript"> <?php include_once "includes/components/sidenav.js"; ?></script>

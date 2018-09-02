@@ -32,7 +32,7 @@
 			<div class="col m12" id="form">
 				<form method="post" action="">
 					<div class="input-field col m12 s12 white-text">
-			          <input id="jogador" name="jogador" type="text" class="validate white-text">
+			          <input id="jogador" autofocus="" name="jogador" type="text" class="validate white-text">
 			          <label for="jogador">Insira o nome do jogador:</label>
 			        </div>
 					<button type="submit" class="waves-effect col m4 waves-light right btn-large green" id="botao"> Adicionar jogador </button>					
@@ -65,34 +65,16 @@
 			$players = $_SESSION["players"];
 			foreach($players as $player){
 				$pn = $player["playerName"];
+				$pc = $player["playerCategory"];
+				$pp = $player["playerPosition"];
 				echo "<div class='col m3 s12 push-m1 white rounded center-align'>";
 				echo "<span>".$player["playerName"]."</span>";
-				echo "<a href='delplayer.php?pn=$pn'><i class='material-icons right green-text'>close</i></a>";
+				echo "<a href='delplayer.php?pn=$pn&pc=$pc&pp=$pp'><i class='material-icons right green-text'>close</i></a>";
 				echo "</div>";
 			}
 		}
 		?>
-			<!-- <div class="col m3 s12 push-m1 white rounded center-align"> 
-				<span> João Gabriel </span> 
-				<a href="#"> <i class="material-icons right green-text">close</i> </a> -->
-				<!-- ATRIBUIR FUNÇÃO AO CLICAR NO 'X' -->
-			<!-- </div>
-
-			<div class="col m3 s12 push-m1 white rounded center-align"> 
-				<span> Jarbas </span> 
-				<a href="#"> <i class="material-icons right green-text">close</i> </a>
-			</div>
-
-			<div class="col m3 s12 push-m1 white rounded center-align"> 
-				<span> Magno </span> 
-				<a href="#"> <i class="material-icons right green-text">close</i> </a>		
-			</div>
-
-			<div class="col m3 s12 push-m1 white rounded center-align"> 
-				<span> Carlito </span> 
-				<a href="#"> <i class="material-icons right green-text">close</i> </a>
-			</div> -->
-			<button type="submit" onclick="window.location.href = 'setgoalkeepers.php'" class="waves-effect col m12 waves-light btn-large <?php if($_SESSION["numTeams"]<2){echo " disabled ";} ?>" id="botao"> Próxima Etapa <i class="material-icons right"> arrow_forward_ios </i> </button>
+			<button type="submit" onclick="window.location.href = 'setgoalkeepers.php'" class="waves-effect col m12 waves-light btn-large green <?php if($_SESSION["numTeams"]<2){echo " disabled ";} ?>" id="botao"> Próxima Etapa <i class="material-icons right"> arrow_forward_ios </i> </button>
 		</div>	
 	</div>
 </div>
@@ -100,3 +82,4 @@
 </html>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.min.js" ></script>
+<script type="text/javascript"> <?php include_once "includes/components/sidenav.js"; ?></script>

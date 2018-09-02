@@ -34,10 +34,10 @@
 		$numPlayers = $_SESSION["numPlayers"];
 		$numGoalkeeper = $_SESSION["numGoalkeeper"];
 		$numTeams = $_SESSION["numTeams"];
-		$undefined = $_SESSION["indefinido"]; 
+		$undefined = $_SESSION["undefined"]; 
 		$bronze = $_SESSION["bronze"];
-		$silver = $_SESSION["prata"];
-		$gold = $_SESSION["ouro"];
+		$silver = $_SESSION["silver"];
+		$gold = $_SESSION["gold"];
 		$teams = array();
 		for($i=0;$i < $numTeams;$i++){
 			$teams[$i] = array();
@@ -70,7 +70,7 @@
 		while(--$gold >=0){
 			foreach($players as $player){ 
 				sort($teams);
-				if($player["playerCategory"] == "ouro" && count($teams[0])<6 ){
+				if($player["playerCategory"] == "gold" && count($teams[0])<6 ){
 					$teams[0][] = $player;
 					$teams[0][0] += 3;
 					unset($players[array_search($player, $players)]);
@@ -80,7 +80,7 @@
 		while(--$silver >=0){
 			foreach($players as $player){
 				sort($teams);
-				if($player["playerCategory"] == "prata" && count($teams[0])<6 ){
+				if($player["playerCategory"] == "silver" && count($teams[0])<6 ){
 					$teams[0][] = $player;
 					$teams[0][0] += 2;
 					unset($players[array_search($player, $players)]);
@@ -117,7 +117,7 @@
 		$i = 1;
 		foreach($teams as $team){
 			echo "<div class='col m6' id='form'>";
-			echo "<h3 class='header white-text'> Time ".$i++." </h3>";
+			echo "<h3 class='header white-text'> Time ".$i++."(".$team[0].")</h3>";
 			for($j=1;$j<count($team);$j++){
 				echo "<div class='col m5 s12 white rounded center-align'>";
 				echo "<span>".$team[$j]["playerName"]."</span>";
@@ -173,7 +173,7 @@
 		<?php 
 		if(count($players)>0){
 			echo '<div class="col m6" id="form">';
-			echo '<h3 class="header white-text"> Jogadores de Reserva </h3>';
+			echo '<h3 class="header white-text"> Reservas </h3>';
 			foreach($players as $player){
 				echo '<div class="col m5 s12 white rounded center-align"> ';
 				echo '	<span> '.$player["playerName"].' </span> ';
@@ -188,3 +188,4 @@
 </html>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.min.js" ></script>
+<script type="text/javascript"> <?php include_once "includes/components/sidenav.js"; ?></script>
