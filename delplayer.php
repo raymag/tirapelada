@@ -5,7 +5,10 @@ if(isset($_SESSION["players"])){
         $player["playerName"] = $_GET["pn"];
         $player["playerCategory"] = $_GET["pc"];
         $player["playerPosition"] = $_GET["pp"];
-        unset($_SESSION["players"][array_search($player, $_SESSION["players"])]);
+        $players = $_SESSION["players"];
+        unset($players[array_search($player, $players)]);
+        $_SESSION["players"] = $players;
+        sort($_SESSION["players"]);
         $_SESSION["numPlayers"]--;
         $_SESSION["numTeams"] = floor($_SESSION["numPlayers"]/5);
     }

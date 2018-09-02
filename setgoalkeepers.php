@@ -1,4 +1,8 @@
-<?php session_start() ?>
+<?php
+session_start();
+if( $_SESSION["numTeams"]<2){
+	header("index.php");
+}?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

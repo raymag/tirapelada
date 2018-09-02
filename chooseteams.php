@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php 
+session_start(); 
+if( $_SESSION["numTeams"]<2){
+	header("index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -117,7 +122,7 @@
 		$i = 1;
 		foreach($teams as $team){
 			echo "<div class='col m6' id='form'>";
-			echo "<h3 class='header white-text'> Time ".$i++."(".$team[0].")</h3>";
+			echo "<h3 class='header white-text'> Time ".$i++."</h3>";
 			for($j=1;$j<count($team);$j++){
 				echo "<div class='col m5 s12 white rounded center-align'>";
 				echo "<span>".$team[$j]["playerName"]."</span>";
