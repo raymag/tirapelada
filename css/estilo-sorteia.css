@@ -1,0 +1,70 @@
+/* CSS DO INDEX */
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+#fundo{
+    position: absolute;
+    top: 0px;
+    padding-top: 10%;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../imagens/background.jpg");
+    background: cover;
+}
+
+#botao{
+    margin-top: 2% !important;
+}
+
+.rounded{
+    padding: 1% !important;
+    border-radius: 20px;
+    margin: 1% !important;
+}
+
+.rounded-badge{
+    border-radius: 20px !important;
+}
+
+#backblack{
+    background-color: rgba(0,0,0,0.6) !important;
+    padding: 3%;
+    border-radius: 7px;
+}
+
+#backblack2{
+    background-color: rgba(0,0,0,0.6) !important;
+    padding: 2%;
+    border-radius: 7px;
+}
+
+nav{
+	background-color: rgba(0,0,0,0.6) !important;
+    height: 10% !important;
+}
+
+@media (min-width: 992px) {
+    .brand-logo{
+    	margin-left: 5%;
+    }
+
+    #nav-mobile{
+    	margin-right: 5%;
+    }
+  }
+
+@media (max-width: 992px) {
+    #fundo{
+        padding-top: 20%;
+    }
+}
